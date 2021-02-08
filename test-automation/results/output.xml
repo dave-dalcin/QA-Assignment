@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.4 on win32)" generated="20210208 02:34:28.862" rpa="false">
+<suite id="s1" name="TS-03-FeedTests" source="D:\Backbase\QA-Assignment\test-automation\tests\TS-03-FeedTests.robot">
+<test id="s1-t1" name="TC-23-User must be able to delete an article">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:29.238" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210208 02:34:29.237" endtime="20210208 02:34:31.284"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210208 02:34:31.285" endtime="20210208 02:34:31.415"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:29.237" endtime="20210208 02:34:31.415"></status>
+</kw>
+<kw name="Given User Login With User &quot;${existentEmail}&quot; And Password &quot;${existentPassword}&quot;" library="Common">
+<kw name="User Login" library="Common">
+<arguments>
+<arg>${myUserName}</arg>
+<arg>${myPassword}</arg>
+</arguments>
+<kw name="Go to BBlog Landing Page" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${BBLOG_URL}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:31.423" level="INFO">Opening url 'https://candidatex:qa-is-cool@qa-task.backbasecloud.com/'</msg>
+<status status="PASS" starttime="20210208 02:34:31.423" endtime="20210208 02:34:36.920"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${LOC_BBLOG_LOGO}</arg>
+<arg>BBlog</arg>
+<arg>error=Landing Page BBlog logo is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:36.920" endtime="20210208 02:34:36.961"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:31.421" endtime="20210208 02:34:36.961"></status>
+</kw>
+<kw name="Click On Top Nav Sign In" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_SIGN_IN}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:36.962" level="INFO">Clicking element '//a[@routerlink="/login"]'.</msg>
+<status status="PASS" starttime="20210208 02:34:36.962" endtime="20210208 02:34:37.057"></status>
+</kw>
+<kw name="Verify If Sign In Page Is Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOC_SIGN_UP_TEXT}</arg>
+<arg>error= Sign In page is not showing "Sign in" text</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:37.059" endtime="20210208 02:34:37.079"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:37.058" endtime="20210208 02:34:37.080"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:36.961" endtime="20210208 02:34:37.080"></status>
+</kw>
+<kw name="Input Sign In User Name" library="SignIn">
+<arguments>
+<arg>${myUserName}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_INPUT_SIGNIN_USER_NAME}</arg>
+<arg>${myUserName}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20210208 02:34:37.082" level="INFO">Typing text 'posts1@gmail.com' into text field '//input[@placeholder="Username"]'.</msg>
+<status status="PASS" starttime="20210208 02:34:37.081" endtime="20210208 02:34:37.266"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:37.081" endtime="20210208 02:34:37.267"></status>
+</kw>
+<kw name="Input Sign In Password" library="SignIn">
+<arguments>
+<arg>${myPassword}</arg>
+</arguments>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_INPUT_SIGNIN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:37.268" endtime="20210208 02:34:37.329"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_INPUT_SIGNIN_PASSWORD}</arg>
+<arg>${myPassword}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:37.329" level="INFO">Typing text 'passwd' into text field '//input[@placeholder="Password"]'.</msg>
+<status status="PASS" starttime="20210208 02:34:37.329" endtime="20210208 02:34:37.432"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${myPassword}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:37.433" level="INFO">passwd</msg>
+<status status="PASS" starttime="20210208 02:34:37.433" endtime="20210208 02:34:37.433"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:37.267" endtime="20210208 02:34:37.433"></status>
+</kw>
+<kw name="Click On Sign In Button" library="SignIn">
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_SIGN_IN_BUTTON}</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:37.434" endtime="20210208 02:34:37.463"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210208 02:34:39.473" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210208 02:34:37.463" endtime="20210208 02:34:39.473"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_SIGN_IN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:39.474" level="INFO">Clicking button '//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20210208 02:34:39.473" endtime="20210208 02:34:39.549"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:37.434" endtime="20210208 02:34:39.549"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:31.419" endtime="20210208 02:34:39.549"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:31.417" endtime="20210208 02:34:39.549"></status>
+</kw>
+<kw name="When Click On Top Nav New Post" library="TopNav">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_NEW_POST}</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:39.551" endtime="20210208 02:34:40.874"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_NEW_POST}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:40.875" level="INFO">Clicking element '//a[@routerlink='/editor']'.</msg>
+<status status="PASS" starttime="20210208 02:34:40.875" endtime="20210208 02:34:40.939"></status>
+</kw>
+<kw name="Verify If Article Editor Is Loaded" library="ArticleEditor">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOC_PUBLISH_BUTTON}</arg>
+<arg>error= Article Editor Page is not Loaded</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:40.940" endtime="20210208 02:34:42.703"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:40.940" endtime="20210208 02:34:42.704"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:39.550" endtime="20210208 02:34:42.704"></status>
+</kw>
+<kw name="And Input Article Title" library="ArticleEditor">
+<arguments>
+<arg>${myNewTitle}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_INPUT_ARTICLE_TITLE}</arg>
+<arg>${myTitle}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:42.707" level="INFO">Typing text 'Titlelnb' into text field '//input[@placeholder='Article Title']'.</msg>
+<status status="PASS" starttime="20210208 02:34:42.706" endtime="20210208 02:34:42.846"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:42.705" endtime="20210208 02:34:42.846"></status>
+</kw>
+<kw name="And Input Article About" library="ArticleEditor">
+<arguments>
+<arg>${myNewAbout}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_INPUT_ARTICLE_ABOUT}</arg>
+<arg>${myAbout}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:42.848" level="INFO">Typing text 'Aboutndu' into text field '//input[@placeholder="What's this article about?"]'.</msg>
+<status status="PASS" starttime="20210208 02:34:42.847" endtime="20210208 02:34:42.990"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:42.847" endtime="20210208 02:34:42.990"></status>
+</kw>
+<kw name="And Input Article Markdown" library="ArticleEditor">
+<arguments>
+<arg>${myNewMarkdown}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_INPUT_ARTICLE_MARKDOWN}</arg>
+<arg>${myMarkdown}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:42.993" level="INFO">Typing text 'Markdownqxo' into text field '//textarea[@placeholder='Write your article (in markdown)']'.</msg>
+<status status="PASS" starttime="20210208 02:34:42.993" endtime="20210208 02:34:43.141"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:42.991" endtime="20210208 02:34:43.142"></status>
+</kw>
+<kw name="And Input Article Tags" library="ArticleEditor">
+<arguments>
+<arg>${myNewTags}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_INPUT_ARTICLE_TAGS}</arg>
+<arg>${myTags}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:43.146" level="INFO">Typing text 'tagzkb' into text field '//input[@placeholder='Enter Tags']'.</msg>
+<status status="PASS" starttime="20210208 02:34:43.146" endtime="20210208 02:34:43.290"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:43.145" endtime="20210208 02:34:43.290"></status>
+</kw>
+<kw name="And Click On Publish Article Button" library="ArticleEditor">
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_PUBLISH_BUTTON}</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:43.297" endtime="20210208 02:34:43.317"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_PUBLISH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:43.318" level="INFO">Clicking button '//button[normalize-space()='Publish Article']'.</msg>
+<status status="PASS" starttime="20210208 02:34:43.318" endtime="20210208 02:34:43.402"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_POST_COMMENT_BUTTON}</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:43.402" endtime="20210208 02:34:45.185"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:43.296" endtime="20210208 02:34:45.185"></status>
+</kw>
+<kw name="Then Title Must Be &quot;${myNewTitle}&quot;" library="ArticleEditor">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_VIEW_POST_TITLE}'${title}']</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:45.187" endtime="20210208 02:34:45.214"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:45.186" endtime="20210208 02:34:45.214"></status>
+</kw>
+<kw name="And Markdown Must Be &quot;${myNewMarkdown}&quot;" library="ArticleEditor">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_VIEW_POST_MARKDOWN}'${markdown}']</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:45.216" endtime="20210208 02:34:45.244"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:45.215" endtime="20210208 02:34:45.244"></status>
+</kw>
+<kw name="When Click Delete ArticleButton" library="ArticleEditor">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LOC_DELETE_ARTICLE_BUTTON}</arg>
+<arg>error=Delete Button was not loaded</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:45.245" endtime="20210208 02:34:45.261"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_DELETE_ARTICLE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:45.262" level="INFO">Clicking element '//div[@class='container']//button[@class='btn btn-sm btn-outline-danger'][normalize-space()='Delete Article']'.</msg>
+<status status="PASS" starttime="20210208 02:34:45.262" endtime="20210208 02:34:45.323"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_BBLOG_LOGO}</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:45.324" endtime="20210208 02:34:45.997"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:45.245" endtime="20210208 02:34:45.998"></status>
+</kw>
+<kw name="And Click On Top Nav &quot;${existentUser}&quot; User" library="TopNav">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${logged}</arg>
+</arguments>
+<assign>
+<var>${myUser}</var>
+</assign>
+<msg timestamp="20210208 02:34:45.999" level="INFO">${myUser} = posts1</msg>
+<status status="PASS" starttime="20210208 02:34:45.999" endtime="20210208 02:34:45.999"></status>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<doc>Converts string to lower case.</doc>
+<arguments>
+<arg>${myUser}</arg>
+</arguments>
+<assign>
+<var>${myUser}</var>
+</assign>
+<msg timestamp="20210208 02:34:46.000" level="INFO">${myUser} = posts1</msg>
+<status status="PASS" starttime="20210208 02:34:45.999" endtime="20210208 02:34:46.000"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${LOC_TOPNAV_USERNAME}/${myUser}"]</arg>
+</arguments>
+<assign>
+<var>${myLocator}</var>
+</assign>
+<msg timestamp="20210208 02:34:46.000" level="INFO">${myLocator} = //a[@class="nav-link"][@href="#/profile/posts1"]</msg>
+<status status="PASS" starttime="20210208 02:34:46.000" endtime="20210208 02:34:46.000"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${myLocator}</arg>
+<arg>error= ${myUser} User Name is not visible on Top Nav</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:46.000" endtime="20210208 02:34:46.050"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${myLocator}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:46.050" level="INFO">Clicking element '//a[@class="nav-link"][@href="#/profile/posts1"]'.</msg>
+<status status="PASS" starttime="20210208 02:34:46.050" endtime="20210208 02:34:46.103"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:45.998" endtime="20210208 02:34:46.103"></status>
+</kw>
+<kw name="Then Post &quot;${myNewTitle}&quot; Must Not Exist" library="ArticleEditor">
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<arguments>
+<arg>${LOC_VIEW_POST_TITLE}'${title}']</arg>
+<arg>error=Article was not deleted</arg>
+</arguments>
+<msg timestamp="20210208 02:34:46.115" level="INFO">Current page does not contain element '//h1[normalize-space()='Titlelnb']'.</msg>
+<status status="PASS" starttime="20210208 02:34:46.104" endtime="20210208 02:34:46.115"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:46.104" endtime="20210208 02:34:46.115"></status>
+</kw>
+<kw name="When Click On Top Nav Settings Button" library="TopNav">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_TOP_NAV_SETTINGS}</arg>
+<arg>error=Settings button is not vibible on Top Nav</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:46.116" endtime="20210208 02:34:46.142"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_TOP_NAV_SETTINGS}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:46.142" level="INFO">Clicking element '//a[@routerlink='/settings']'.</msg>
+<status status="PASS" starttime="20210208 02:34:46.142" endtime="20210208 02:34:46.207"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:46.116" endtime="20210208 02:34:46.207"></status>
+</kw>
+<kw name="And Click On Logout Button" library="Profile">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_LOGOUT_BUTTON}</arg>
+<arg>error=Logout button is not vibible on Top Nav</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:46.208" endtime="20210208 02:34:46.895"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOC_LOGOUT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20210208 02:34:46.896" level="INFO">Clicking element '//button[normalize-space()='Or click here to logout.']'.</msg>
+<status status="PASS" starttime="20210208 02:34:46.896" endtime="20210208 02:34:46.956"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:46.208" endtime="20210208 02:34:46.956"></status>
+</kw>
+<kw name="Then Sign In Must Be Visible On TopNav" library="TopNav">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOC_TOPNAV_SIGNIN}</arg>
+<arg>error=SignIn is not vibible on Top Nav</arg>
+</arguments>
+<status status="PASS" starttime="20210208 02:34:46.958" endtime="20210208 02:34:46.982"></status>
+</kw>
+<status status="PASS" starttime="20210208 02:34:46.958" endtime="20210208 02:34:46.982"></status>
+</kw>
+<doc>This test case convers TC-14 and TC-15</doc>
+<tags>
+<tag>gherkin</tag>
+<tag>positive</tag>
+<tag>tc23</tag>
+</tags>
+<status status="PASS" starttime="20210208 02:34:29.235" endtime="20210208 02:34:46.983" critical="yes"></status>
+</test>
+<doc>Scenario verifies whether the Feed functionalities are working properly</doc>
+<status status="PASS" starttime="20210208 02:34:28.864" endtime="20210208 02:34:46.985"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">gherkin</stat>
+<stat pass="1" fail="0">positive</stat>
+<stat pass="1" fail="0">tc23</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="TS-03-FeedTests">TS-03-FeedTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
